@@ -7,6 +7,7 @@ import { wagmiConfig } from "@/wagmiConfig";
 import { ContextProvider } from "@/providers";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { LiveIslandComp } from "@/app/_components/LiveIslandComp";
+import {Toaster} from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -32,6 +33,7 @@ export default function RootLayout({
               <div className="bg-background p-4 h-full">{children}</div>
             </AspectRatio>
           </div>
+          <Toaster />
         </ContextProvider>
       </body>
     </html>

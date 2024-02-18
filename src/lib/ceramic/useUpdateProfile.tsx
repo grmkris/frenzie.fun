@@ -2,6 +2,7 @@ import { ComposeClient } from "@composedb/client";
 import { UserProfileSchema } from "@/schemas/ceramic.schema";
 import { useMutation } from "@tanstack/react-query";
 import { useCeramicContext } from "@/ceramicContext";
+import {toast} from "sonner";
 
 export const updateProfile = async (props: {
   composeClient: ComposeClient;
@@ -55,6 +56,10 @@ export const updateProfile = async (props: {
 export const useUpdateProfile = () => {
   const { composeClient, isAuthenticated } = useCeramicContext();
   return useMutation({
+    onSuccess: (data) => {
+      console.log("Profile updated", data);
+      toast.success("Profile updated");
+    },
     mutationFn: async (profile: UserProfileSchema) => {
       if (!composeClient) throw new Error("No client");
       if (!isAuthenticated) throw new Error("Not authenticated");
