@@ -7,6 +7,7 @@ import { useAccount, useEnsName } from "wagmi";
 import { SLIDE_IN_FROM_TOP } from "@/lib/animations";
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
+import Link from "next/link";
 
 // Define the words as a constant array of strings
 const words = [
@@ -76,27 +77,42 @@ export const LiveIslandComp: React.FC = () => {
         isSmall ? (
           <RotatinText />
         ) : (
-            <div className="flex flex-col items-center m-4">
+            <div className="flex flex-col items-center m-4 space-y-1">
 
               <QRCodeSVG
-                  value={`http://localhost:3000/${ens.data ?? account.address}`}
+                  value={`http://localhost:3000/${ens.data ?? formatAddress(account.address ?? '')}`}
                   includeMargin={true}
                   size={200}
                   // rounded corners
                   className="rounded-2xl"
               />
-              <div className="text-center">{ens.data ?? account.address}</div>
               <Separator className={"m-2"} />
-              <Button
-                  variant={"ghost"}
-                  className="py-2 px-4 rounded-full w-full"
-              >
-                  Meet
-              </Button>
 
+              <a href={`http://localhost:3000/${ens.data ?? formatAddress(account.address ?? '')}`} className={"w-full"}
+                    target="_blank"
+                    rel="noreferrer"
+              >
+              <Button className="py-2 px-4 rounded-full w-full">
+                  Share {ens.data ?? formatAddress(account.address ?? '')} ✈️
+                </Button>
+              </a>
+              <Button className="py-2 px-4 rounded-full w-full"
+                      onClick={() => {
+                        navigator.clipboard.writeText(`http://localhost:3000/${ens.data ?? formatAddress(account.address ?? '')}`);
+                      }}
+              >
+                Copy url 📋
+                </Button>
+                <Button className="py-2 px-4 rounded-full w-full">
+                  Commemorate Connection 🚀
+                </Button>
             </div>
         )
       }
     </LiveIsland>
   );
 };
+
+const formatAddress = (address: string) => {
+  return `${address.slice(0, 6)}...${address.slice(-4)}`;
+}
