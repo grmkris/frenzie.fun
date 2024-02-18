@@ -5,7 +5,7 @@
       ".*"
     ],
     "admin-dids": [
-      "did:key:z6MkjHdDZdrqKcvK9qivoPxMFHbc6KAyYBFERsEcVBQyVpft"
+      "did:key:z6MkhJkg23EAUHqLCjvP8tZQXBgFuL1wib3BaJxY1zr4sGMB"
     ]
   },
   "ipfs": {
@@ -25,10 +25,10 @@
   "node": {},
   "state-store": {
     "mode": "fs",
-    "local-directory": "/Users/kristjangrm/Code/ceramic_tmp/ceramic-eas/.ceramic/.ceramic/statestore/"
+    "local-directory": "/Users/kristjangrm/Code/frenzie.fun/.ceramic/.ceramic/statestore/"
   },
   "indexing": {
-    "db": "sqlite:///Users/kristjangrm/Code/ceramic_tmp/ceramic-eas/.ceramic/indexing.sqlite",
+    "db": "sqlite:///Users/kristjangrm/Code/frenzie.fun/.ceramic/indexing.sqlite",
     "allow-queries-before-historical-sync": true,
     "models": []
   }
