@@ -9,7 +9,8 @@
     ]
   },
   "ipfs": {
-    "mode": "bundled"
+    "mode": "external",
+    "api-endpoint": "http://localhost:5001"
   },
   "logger": {
     "log-level": 2,
@@ -20,7 +21,7 @@
     "metrics-port": 9090
   },
   "network": {
-    "name": "inmemory"
+    "name": "mainnet"
   },
   "node": {},
   "state-store": {
