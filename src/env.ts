@@ -2,8 +2,8 @@ import { parseEnv } from "znv";
 import { z } from "zod";
 
 export const env = parseEnv(process.env, {
-    NEXT_PUBLIC_WC_PROJECT_ID: z.string().min(1),
     NEXT_PUBLIC_CERAMIC_URL: z.string().min(1),
+    NEXT_PUBLIC_WC_PROJECT_ID: z.string().min(1),
     NEXT_PUBLIC_VERCEL_ENV: z.string().optional().describe("The Environment that the app is deployed and running on. The value can be either production, preview, or development."),
     NEXT_PUBLIC_VERCEL_URL: z.string().optional().describe("The domain name of the generated deployment URL. Example: *.vercel.app. The value does not include the protocol scheme https://. NOTE: This Variable cannot be used in conjunction with Standard Deployment Protection. See Migrating to Standard Protection."),
     NEXT_PUBLIC_VERCEL_BRANCH_URL: z.string().optional().describe("The domain name of the generated Git branch URL. Example: *-git-*.vercel.app. The value does not include the protocol scheme https://."),

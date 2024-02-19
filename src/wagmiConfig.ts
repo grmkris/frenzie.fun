@@ -9,11 +9,6 @@ export const ENABLED_CHAINS = [sepolia, scrollSepolia, mainnet] as const;
 
 export type EnabledChain = (typeof ENABLED_CHAINS)[number];
 
-// Get projectId at https://cloud.walletconnect.com
-export const WC_PROJECT_ID = env.NEXT_PUBLIC_WC_PROJECT_ID;
-
-if (!WC_PROJECT_ID) throw new Error("Project ID is not defined");
-
 const metadata = {
   name: "Web3Modal",
   description: "Web3Modal Example",
@@ -24,7 +19,7 @@ const metadata = {
 // Create wagmiConfig
 export const wagmiConfig = defaultWagmiConfig({
   chains: ENABLED_CHAINS, // required
-  projectId: WC_PROJECT_ID, // required
+  projectId: env.NEXT_PUBLIC_WC_PROJECT_ID,
   metadata, // required
   ssr: true,
   storage: createStorage({
