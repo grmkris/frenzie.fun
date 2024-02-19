@@ -4,11 +4,9 @@ import React, { useEffect, useState } from "react";
 import LiveIsland from "react-live-island";
 import { QRCodeSVG } from "qrcode.react";
 import { useAccount, useEnsName } from "wagmi";
-import { SLIDE_IN_FROM_TOP } from "@/lib/animations";
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
-import Link from "next/link";
-import {APP_URL} from "@/env";
+import {APP_URL} from "../../../env.mjs";
 
 // Define the words as a constant array of strings
 const words = [

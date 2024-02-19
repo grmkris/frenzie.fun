@@ -6,11 +6,11 @@ import { RuntimeCompositeDefinition } from "@composedb/types";
 import { definition } from "@/__generated__/definition";
 import { Provider } from "@ethersproject/abstract-provider";
 import { Address } from "viem";
-import {env} from "@/env";
+import {env} from "../../../env.mjs";
 
 export const createComposeClient = () => {
   return new ComposeClient({
-    ceramic: env.NEXT_PUBLIC_CERAMIC_URL,
+    ceramic: process.env.NEXT_PUBLIC_CERAMIC_URL ?? "",
     definition: definition as RuntimeCompositeDefinition,
   });
 };

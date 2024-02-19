@@ -3,7 +3,7 @@ import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 import { cookieStorage, createStorage } from "wagmi";
 import { sepolia, scrollSepolia } from "wagmi/chains";
 import { mainnet } from "viem/chains";
-import {env} from "@/env";
+import {env} from "../env.mjs";
 
 export const ENABLED_CHAINS = [sepolia, scrollSepolia, mainnet] as const;
 
@@ -19,7 +19,7 @@ const metadata = {
 // Create wagmiConfig
 export const wagmiConfig = defaultWagmiConfig({
   chains: ENABLED_CHAINS, // required
-  projectId: env.NEXT_PUBLIC_WC_PROJECT_ID,
+  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID ?? "", // required
   metadata, // required
   ssr: true,
   storage: createStorage({

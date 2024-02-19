@@ -3,3 +3,4 @@
 admin_seed.txt
 node_modules/*
 .ceramic
+.env.local
