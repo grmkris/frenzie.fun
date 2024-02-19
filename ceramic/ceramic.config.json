@@ -10,7 +10,7 @@
     },
     "ipfs": {
       "mode": "remote",
-      "host": "http://ipfs.railway.internal:5001",
+      "host": "https://ipfs-production-ddf8.up.railway.app",
       "disable-peer-data-sync": false
     },
     "logger": {
