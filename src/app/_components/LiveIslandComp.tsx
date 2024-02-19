@@ -8,6 +8,7 @@ import { SLIDE_IN_FROM_TOP } from "@/lib/animations";
 import {Button} from "@/components/ui/button";
 import {Separator} from "@/components/ui/separator";
 import Link from "next/link";
+import {APP_URL} from "@/env";
 
 // Define the words as a constant array of strings
 const words = [
@@ -80,7 +81,7 @@ export const LiveIslandComp: React.FC = () => {
             <div className="flex flex-col items-center m-4 space-y-1">
 
               <QRCodeSVG
-                  value={`http://localhost:3000/${ens.data ?? formatAddress(account.address ?? '')}`}
+                  value={`${APP_URL}/${ens.data ?? formatAddress(account.address ?? '')}`}
                   includeMargin={true}
                   size={200}
                   // rounded corners
@@ -88,7 +89,7 @@ export const LiveIslandComp: React.FC = () => {
               />
               <Separator className={"m-2"} />
 
-              <a href={`http://localhost:3000/${ens.data ?? formatAddress(account.address ?? '')}`} className={"w-full"}
+              <a href={`${APP_URL}/${ens.data ?? formatAddress(account.address ?? '')}`} className={"w-full"}
                     target="_blank"
                     rel="noreferrer"
               >
@@ -98,7 +99,7 @@ export const LiveIslandComp: React.FC = () => {
               </a>
               <Button className="py-2 px-4 rounded-full w-full"
                       onClick={() => {
-                        navigator.clipboard.writeText(`http://localhost:3000/${ens.data ?? formatAddress(account.address ?? '')}`);
+                        navigator.clipboard.writeText(`${APP_URL}/${ens.data ?? formatAddress(account.address ?? '')}`);
                       }}
               >
                 Copy url 📋

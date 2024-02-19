@@ -3,13 +3,14 @@ import { defaultWagmiConfig } from "@web3modal/wagmi/react/config";
 import { cookieStorage, createStorage } from "wagmi";
 import { sepolia, scrollSepolia } from "wagmi/chains";
 import { mainnet } from "viem/chains";
+import {env} from "@/env";
 
 export const ENABLED_CHAINS = [sepolia, scrollSepolia, mainnet] as const;
 
 export type EnabledChain = (typeof ENABLED_CHAINS)[number];
 
 // Get projectId at https://cloud.walletconnect.com
-export const WC_PROJECT_ID = process.env.NEXT_PUBLIC_WC_PROJECT_ID;
+export const WC_PROJECT_ID = env.NEXT_PUBLIC_WC_PROJECT_ID;
 
 if (!WC_PROJECT_ID) throw new Error("Project ID is not defined");
 

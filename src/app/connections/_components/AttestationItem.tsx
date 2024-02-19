@@ -5,6 +5,7 @@ import { ResolvedAttestation } from "@/types";
 import { CUSTOM_SCHEMAS, EASContractAddress } from "@/lib/eas-ceramic.utils";
 import { Button } from "@/components/ui/button";
 import { useEthersSigner } from "@/lib/ethers-wagmi.utils";
+import {env} from "@/env";
 
 type Props = {
   data: ResolvedAttestation;
@@ -28,7 +29,7 @@ export function AttestationItem({ data }: Props) {
     <Button
       className="AttestContainer"
       onClick={() => {
-        window.open(`http://localhost:7007/api/v0/streams/${data.id}`);
+        window.open(`${env}/api/v0/streams/${data.id}`);
       }}
     >
       <div className="NameHolder">

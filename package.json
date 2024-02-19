@@ -5,6 +5,7 @@
   "scripts": {
     "firstTime": "npx aws-sdk-js-codemod -t v2-to-v3 .",
     "generate": "node scripts/commands.mjs",
+    "remote:deploy": "node scripts/run-remote.mjs",
     "dev": "node scripts/run.mjs",
     "nextDev": "next dev",
     "ceramic": "CERAMIC_ENABLE_EXPERIMENTAL_COMPOSE_DB='true' ceramic daemon --config ./composedb.config.json",
@@ -60,6 +61,7 @@
     "tailwindcss-animate": "^1.0.7",
     "viem": "^2.7.8",
     "wagmi": "^2.5.6",
+    "znv": "^0.4.0",
     "zod": "^3.22.4",
     "zod-validation-error": "^3.0.2"
   },
