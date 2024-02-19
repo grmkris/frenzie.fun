@@ -1,0 +1,40 @@
+{
+    "anchor": {},
+    "http-api": {
+      "cors-allowed-origins": [
+        ".*"
+      ],
+      "admin-dids": [
+        "did:key:z6MkjKKPk7q1xecpVx9BoVDUFsJ3Q598rPXGW7sHQLs9LPsi"
+      ]
+    },
+    "ipfs": {
+      "mode": "external",
+      "host": "http://ipfs.railway.internal:5001",
+      "disable-peer-data-sync": false
+    },
+    "logger": {
+      "log-level": 2,
+      "log-to-files": false
+    },
+    "metrics": {
+      "metrics-exporter-enabled": false,
+      "metrics-port": 9090
+    },
+    "network": {
+      "name": "mainnet"
+    },
+    "node": {},
+    "state-store": {
+      "mode": "fs",
+      "local-directory": "/root/.ceramic/statestore/"
+    },
+    "indexing": {
+      "db": "postgresql://postgres:a-ad4*ca5BcfeBA-g61FGe4Bd6F2dCBD@viaduct.proxy.rlwy.net:24043/railway",
+      "allow-queries-before-historical-sync": true,
+      "disable-composedb": false,
+      "enable-historical-sync": false,
+      "models": []
+    }
+  }
+  
