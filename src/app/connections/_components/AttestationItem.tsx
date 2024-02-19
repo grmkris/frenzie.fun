@@ -5,7 +5,7 @@ import { ResolvedAttestation } from "@/types";
 import { CUSTOM_SCHEMAS, EASContractAddress } from "@/lib/eas-ceramic.utils";
 import { Button } from "@/components/ui/button";
 import { useEthersSigner } from "@/lib/ethers-wagmi.utils";
-import {env} from "@/env";
+import {env} from "../../../../env.mjs";
 
 type Props = {
   data: ResolvedAttestation;
