@@ -9,7 +9,7 @@
       ]
     },
     "ipfs": {
-      "mode": "external",
+      "mode": "remote",
       "host": "http://ipfs.railway.internal:5001",
       "disable-peer-data-sync": false
     },
