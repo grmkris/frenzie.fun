@@ -22,7 +22,7 @@
       "metrics-port": 9090
     },
     "network": {
-      "name": "mainnet"
+      "name": "testnet-clay"
     },
     "node": {},
     "state-store": {
@@ -30,7 +30,7 @@
       "local-directory": "/root/.ceramic/statestore/"
     },
     "indexing": {
-      "db": "postgresql://postgres:a1ebFd4f1eecE5GF4a5c-gfgDE-EFef5@viaduct.proxy.rlwy.net:13080/railway",
+      "db": "postgresql://postgres:dAbFF162513cgdE12*5D4Ff5b3cg64AF@postgres-8ymq.railway.internal:5432/railway",
       "allow-queries-before-historical-sync": true,
       "disable-composedb": false,
       "enable-historical-sync": false,
